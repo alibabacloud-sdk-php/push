@@ -5,8 +5,8 @@ namespace AlibabaCloud\Push;
 use AlibabaCloud\Client\Resolver\VersionResolver;
 
 /**
- * @deprecated
+ * @method static V20160801\PushApiResolver v20160801()
  */
-class PushVersion extends VersionResolver
+class Push extends VersionResolver
 {
 }
