@@ -22,6 +22,7 @@ use AlibabaCloud\Client\Resolver\ApiResolver;
  * @method PushNoticeToAndroid pushNoticeToAndroid(array $options = [])
  * @method PushNoticeToiOS pushNoticeToiOS(array $options = [])
  * @method QueryAliases queryAliases(array $options = [])
+ * @method QueryDeviceCount queryDeviceCount(array $options = [])
  * @method QueryDeviceInfo queryDeviceInfo(array $options = [])
  * @method QueryDevicesByAccount queryDevicesByAccount(array $options = [])
  * @method QueryDevicesByAlias queryDevicesByAlias(array $options = [])
@@ -203,6 +204,9 @@ class MassPush extends Rpc
 			if(isset($depth1Value['SendSpeed'])){
 				$this->options['form_params']['PushTask.' . ($depth1 + 1) . '.SendSpeed'] = $depth1Value['SendSpeed'];
 			}
+			if(isset($depth1Value['AndroidNotificationHuaweiChannel'])){
+				$this->options['form_params']['PushTask.' . ($depth1 + 1) . '.AndroidNotificationHuaweiChannel'] = $depth1Value['AndroidNotificationHuaweiChannel'];
+			}
 			if(isset($depth1Value['AndroidPopupActivity'])){
 				$this->options['form_params']['PushTask.' . ($depth1 + 1) . '.AndroidPopupActivity'] = $depth1Value['AndroidPopupActivity'];
 			}
@@ -312,6 +316,8 @@ class MassPush extends Rpc
  * @method $this withPushTime($value)
  * @method string getSendSpeed()
  * @method $this withSendSpeed($value)
+ * @method string getAndroidNotificationHuaweiChannel()
+ * @method $this withAndroidNotificationHuaweiChannel($value)
  * @method string getAndroidPopupActivity()
  * @method $this withAndroidPopupActivity($value)
  * @method string getIOSRemindBody()
@@ -614,6 +620,18 @@ class PushNoticeToiOS extends Rpc
  * @method $this withAppKey($value)
  */
 class QueryAliases extends Rpc
+{
+}
+
+/**
+ * @method string getTarget()
+ * @method $this withTarget($value)
+ * @method string getAppKey()
+ * @method $this withAppKey($value)
+ * @method string getTargetValue()
+ * @method $this withTargetValue($value)
+ */
+class QueryDeviceCount extends Rpc
 {
 }
 
